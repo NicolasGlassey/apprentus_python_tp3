@@ -7,8 +7,8 @@ from fraction import Fraction
 class TestFraction(unittest.TestCase):
     def test_getters_numerator_nominal_case_success(self):
         """given"""
-        expected_numerator = 10;
-        expected_denominator = 2;
+        expected_numerator = 10
+        expected_denominator = 2
         fraction = Fraction(expected_numerator, expected_denominator)
 
         """when"""
