@@ -17,5 +17,6 @@ class TestFraction(unittest.TestCase):
         self.assertEqual(expected_denominator, fraction.get_denominator())
 
 
+
 if __name__ == '__main__':
     unittest.main()
