@@ -17,6 +17,18 @@ class TestFraction(unittest.TestCase):
         self.assertEqual(expected_numerator, fraction.get_numerator())
         self.assertEqual(expected_denominator, fraction.get_denominator())
 
+    def test_getters_numerator_default_value_success(self):
+        """given"""
+        expected_numerator = 1
+        expected_denominator = 1
+        fraction = Fraction()
+
+        """when"""
+
+        """then"""
+        self.assertEqual(expected_numerator, fraction.get_numerator())
+        self.assertEqual(expected_denominator, fraction.get_denominator())
+
 
 if __name__ == '__main__':
     unittest.main()

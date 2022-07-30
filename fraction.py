@@ -6,7 +6,7 @@ class Fraction:
     numerator = 0;
     denominator = 0;
 
-    def __init__(self, numerator, denominator=1):
+    def __init__(self, numerator=1, denominator=1):
         if denominator == 0:
             raise FractionError
         self.numerator = numerator
