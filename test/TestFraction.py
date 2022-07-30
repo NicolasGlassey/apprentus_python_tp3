@@ -29,6 +29,30 @@ class TestFraction(unittest.TestCase):
         self.assertEqual(expected_numerator, fraction.get_numerator())
         self.assertEqual(expected_denominator, fraction.get_denominator())
 
+    def test_constructor_zero_value_denominator_throwException(self):
+            """given"""
+            expected_numerator = 1
+            expected_denominator = 0
+            fraction = Fraction()
+
+            """when"""
+
+            """then"""
+            self.assertRaises(FractionError, fraction.value())
+
+    def test_value_nominal_case_throwException(self):
+            """given"""
+            numerator = 10
+            denominator = 5
+            expected_result = 2
+            fraction = Fraction(numerator, denominator)
+
+            """when"""
+            actual_result = fraction.value()
+
+            """then"""
+            self.assertEqual(expected_result, actual_result)
+
 
 if __name__ == '__main__':
     unittest.main()
