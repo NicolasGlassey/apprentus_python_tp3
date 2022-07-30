@@ -3,6 +3,7 @@ import unittest
 from fraction import FractionError
 from fraction import Fraction
 
+
 class TestFraction(unittest.TestCase):
     def test_getters_numerator_nominal_case_success(self):
         """given"""
@@ -15,7 +16,6 @@ class TestFraction(unittest.TestCase):
         """then"""
         self.assertEqual(expected_numerator, fraction.get_numerator())
         self.assertEqual(expected_denominator, fraction.get_denominator())
-
 
 
 if __name__ == '__main__':
