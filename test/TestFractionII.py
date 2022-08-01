@@ -1,7 +1,8 @@
 import unittest
 
-from fraction import FractionError
 from fraction import Fraction
+from fraction import NullDenominatorException
+from fraction import ParameterIsNotAFractionException
 
 
 class TestFraction(unittest.TestCase):
@@ -40,7 +41,8 @@ class TestFraction(unittest.TestCase):
         """event will be called directly in assert"""
 
         """then"""
-        self.assertRaises(FractionError, Fraction(expected_numerator, expected_denominator))
+        with self.assertRaises(NullDenominatorException):
+            Fraction(expected_numerator, expected_denominator)
 
     def test_constructor_float_parameter_success(self):
         """given"""
@@ -93,7 +95,8 @@ class TestFraction(unittest.TestCase):
         """when"""
 
         """then"""
-        self.assertEqual(True, fraction.is_equal(fraction_to_compare))
+        with self.assertRaises(ParameterIsNotAFractionException):
+            fraction.is_equal(fraction_to_compare)
 
 
 if __name__ == '__main__':

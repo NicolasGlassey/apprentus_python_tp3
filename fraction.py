@@ -2,7 +2,7 @@ class FractionError(Exception):
     pass
 
 
-class NullDenomiatorException(FractionError):
+class NullDenominatorException(FractionError):
     pass
 
 
@@ -11,7 +11,8 @@ class ParameterIsNotAFractionException(FractionError):
 
 
 class Fraction:
-    def __init__(self, numerator, denominator):
+
+    def __init__(self, numerator = 1, denominator = 1):
         pass
 
     def value(self):
