@@ -12,6 +12,7 @@ class TestFraction(unittest.TestCase):
         fraction = Fraction(expected_numerator, expected_denominator)
 
         """when"""
+        """event will be called directly in assert"""
 
         """then"""
         self.assertEqual(expected_numerator, fraction.get_numerator())
@@ -24,6 +25,7 @@ class TestFraction(unittest.TestCase):
         fraction = Fraction()
 
         """when"""
+        """events will be called directly in assert"""
 
         """then"""
         self.assertEqual(expected_numerator, fraction.get_numerator())
@@ -35,9 +37,25 @@ class TestFraction(unittest.TestCase):
         expected_denominator = 0
 
         """when"""
+        """event will be called directly in assert"""
 
         """then"""
         self.assertRaises(FractionError, Fraction(expected_numerator, expected_denominator))
+
+    def test_constructor_float_parameter_success(self):
+        """given"""
+        given_numerator = 10.00
+        expected_numerator = 10
+        given_denominator = 2.00
+        expected_denominator = 2
+        fraction = Fraction(expected_numerator, expected_denominator)
+
+        """when"""
+        """events will be called directly in assert"""
+
+        """then"""
+        self.assertEqual(expected_numerator, fraction.get_numerator())
+        self.assertEqual(expected_denominator, fraction.get_denominator())
 
     def test_value_nominal_case_success(self):
         """given"""
@@ -52,18 +70,30 @@ class TestFraction(unittest.TestCase):
         """then"""
         self.assertEqual(expected_result, actual_result)
 
-        def test_equal_nominal_case_success(self):
-            """given"""
-            numerator = 10
-            denominator = 5
-            expected_result = 2
-            fraction = Fraction(numerator, denominator)
-            fractionII = Fraction(numerator, denominator)
+    def test_equal_nominal_case_success(self):
+        """given"""
+        numerator = 10
+        denominator = 5
+        fraction = Fraction(numerator, denominator)
+        fraction_to_compare = Fraction(numerator, denominator)
 
-            """when"""
+        """when"""
+        """event will be called directly in assert"""
 
-            """then"""
-            self.assertEqual(True, fraction.is_equal(fractionII))
+        """then"""
+        self.assertEqual(True, fraction.is_equal(fraction_to_compare))
+
+    def test_equal_parameter_is_not_a_fraction_throwException(self):
+        """given"""
+        numerator = 10
+        denominator = 5
+        fraction = Fraction(numerator, denominator)
+        fraction_to_compare = 25
+
+        """when"""
+
+        """then"""
+        self.assertEqual(True, fraction.is_equal(fraction_to_compare))
 
 
 if __name__ == '__main__':
