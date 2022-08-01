@@ -14,3 +14,6 @@ class Fraction:
 
     def get_denominator(self):
         pass
+
+    def is_equal(self, fraction_to_evaluate):
+        pass

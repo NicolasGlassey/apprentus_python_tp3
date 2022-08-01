@@ -63,7 +63,7 @@ class TestFraction(unittest.TestCase):
             """when"""
 
             """then"""
-            self.assertEqual(fraction.is_equal(fractionII), True)
+            self.assertEqual(True, fraction.is_equal(fractionII))
 
 
 if __name__ == '__main__':
