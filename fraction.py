@@ -12,17 +12,25 @@ class ParameterIsNotAFractionException(FractionError):
 
 class Fraction:
 
+    numerator = 0
+    denominator = 0
+
     def __init__(self, numerator = 1, denominator = 1):
-        pass
+        if denominator == 0:
+            raise NullDenominatorException()
+        self.numerator = int(numerator)
+        self.denominator = int(denominator)
 
     def value(self):
-        pass
+        return self.numerator / self.denominator
 
     def get_numerator(self):
-        pass
+        return self.numerator
 
     def get_denominator(self):
-        pass
+        return self.denominator
 
     def is_equal(self, fraction_to_evaluate):
-        pass
+        if not isinstance(fraction_to_evaluate, Fraction):
+            raise ParameterIsNotAFractionException()
+        return self.value() == fraction_to_evaluate.value()
