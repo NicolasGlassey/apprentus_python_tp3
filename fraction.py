@@ -13,12 +13,8 @@ class ParameterIsNotAFractionException(FractionError):
 
 class Fraction:
 
-    numerator = 0
-    denominator = 0
-
-    def __init__(self, numerator=1, denominator=1):
-        self.numerator = numerator
-        self.denominator = denominator
+    def __init__(self, numerator, denominator):
+        pass
 
     def get_value(self):
         pass
