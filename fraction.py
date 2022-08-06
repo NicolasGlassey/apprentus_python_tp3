@@ -1,3 +1,4 @@
+
 class FractionError(Exception):
     pass
 
@@ -12,17 +13,21 @@ class ParameterIsNotAFractionException(FractionError):
 
 class Fraction:
 
-    def __init__(self, numerator, denominator):
-        pass
+    numerator = 0
+    denominator = 0
 
-    def value(self):
+    def __init__(self, numerator=1, denominator=1):
+        self.numerator = numerator
+        self.denominator = denominator
+
+    def get_value(self):
         pass
 
     def get_numerator(self):
-        pass
+        return self.numerator
 
     def get_denominator(self):
-        pass
+        return self.denominator
 
     def is_equal(self, fraction_to_evaluate):
         pass
